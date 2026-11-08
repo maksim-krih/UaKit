@@ -1,6 +1,15 @@
-# UaKit
+# UaKit: сума прописом, ЄДРПОУ, ІПН для .NET і JavaScript
 
-Українські бізнес-дані для **.NET** і **JavaScript/TypeScript**, без залежностей:
+[![NuGet](https://img.shields.io/nuget/v/UaKit?label=NuGet)](https://www.nuget.org/packages/UaKit)
+[![npm](https://img.shields.io/npm/v/uakit?label=npm)](https://www.npmjs.com/package/uakit)
+[![CI](https://github.com/maksim-krih/UaKit/actions/workflows/ci.yml/badge.svg)](https://github.com/maksim-krih/UaKit/actions/workflows/ci.yml)
+
+**Сума прописом**, число прописом, перевірка **ЄДРПОУ** та **ІПН (РНОКПП)** для C#/.NET і JavaScript/TypeScript, без залежностей.
+Спробувати в браузері: **[Сума прописом онлайн](https://maksim-krih.github.io/UaKit/)**.
+
+*Ukrainian amount in words (UAH, USD, EUR), number to words, EDRPOU and RNOKPP (tax ID) validation for .NET and JS.*
+
+Що вміє:
 
 - **ЄДРПОУ**: перевірка контрольної цифри;
 - **РНОКПП (ІПН)**: перевірка, дата народження, стать;

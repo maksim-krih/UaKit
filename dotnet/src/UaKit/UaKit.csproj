@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net8.0;net10.0</TargetFrameworks>
@@ -10,13 +10,14 @@
     <PackageId>UaKit</PackageId>
     <Version>0.1.0</Version>
     <Authors>Maksim Krykh</Authors>
-    <Description>Ukrainian business data for .NET: EDRPOU and RNOKPP (ІПН) validation, RNOKPP decoding (birth date, sex), amounts in words in hryvnias (сума прописом).</Description>
-    <PackageTags>ukraine;ukrainian;edrpou;rnokpp;inn;ipn;validation;number-to-words;hryvnia;uah</PackageTags>
+    <Title>UaKit: сума прописом, ЄДРПОУ, ІПН (РНОКПП)</Title>
+    <Description>Сума прописом, число прописом, перевірка ЄДРПОУ та ІПН (РНОКПП) з датою народження і статтю. Ukrainian amount in words (UAH, USD, EUR), number to words, EDRPOU and RNOKPP validation for .NET.</Description>
+    <PackageTags>прописом;сума-прописом;число-прописом;гривня;ЄДРПОУ;ІПН;РНОКПП;ukraine;ukrainian;amount-in-words;number-to-words;num2words;money-to-words;hryvnia;uah;edrpou;rnokpp;inn;ipn;tax-id;validation;invoice</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/maksim-krih/UaKit</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageProjectUrl>https://github.com/maksim-krih/UaKit</PackageProjectUrl>
+    <PackageProjectUrl>https://maksim-krih.github.io/UaKit/</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Сума прописом онлайн: гривні, долари, євро | перевірка ЄДРПОУ та ІПН</title>
+<meta name="description" content="Сума прописом онлайн українською: гривні та копійки, долари, євро. Число прописом з узгодженням роду. Перевірка ЄДРПОУ та ІПН (РНОКПП) з датою народження. Безкоштовно, працює в браузері.">
+<link rel="canonical" href="https://maksim-krih.github.io/UaKit/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Сума прописом онлайн | UaKit">
+<meta property="og:description" content="Сума прописом українською, перевірка ЄДРПОУ та ІПН. Безкоштовно, без реєстрації.">
+<meta property="og:url" content="https://maksim-krih.github.io/UaKit/">
+<meta property="og:locale" content="uk_UA">
+<meta name="theme-color" content="#1d4ed8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='16' fill='%230057b7'/><rect y='16' width='32' height='16' fill='%23ffd700'/></svg>">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Сума прописом онлайн",
+  "url": "https://maksim-krih.github.io/UaKit/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "uk",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "UAH" },
+  "description": "Сума прописом українською, число прописом, перевірка ЄДРПОУ та ІПН (РНОКПП)."
+}
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./">UaKit</a>
+    <nav>
+      <a href="#suma">Сума прописом</a>
+      <a href="#chyslo">Число прописом</a>
+      <a href="#edrpou">ЄДРПОУ</a>
+      <a href="#ipn">ІПН</a>
+      <a href="#dev">Для розробників</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Сума прописом онлайн</h1>
+    <p class="lead">Введіть суму, і отримайте її словами українською для рахунку, акта чи договору. Гривні з копійками, долари, євро. Тут же можна перевірити код ЄДРПОУ та ІПН. Усе рахується у вашому браузері, дані нікуди не надсилаються.</p>
+  </section>
+
+  <section id="suma" class="card">
+    <h2>Сума прописом</h2>
+    <div class="row">
+      <label class="field grow">
+        <span>Сума</span>
+        <input id="amount" inputmode="decimal" autocomplete="off" value="1250,50" aria-describedby="amount-hint">
+        <small id="amount-hint">Можна з комою або крапкою: 1250,50</small>
+      </label>
+      <label class="field">
+        <span>Валюта</span>
+        <select id="currency">
+          <option value="UAH">Гривні (UAH)</option>
+          <option value="USD">Долари США (USD)</option>
+          <option value="EUR">Євро (EUR)</option>
+        </select>
+      </label>
+    </div>
+    <div class="options">
+      <label><input type="checkbox" id="fractionWords"> Копійки словами</label>
+      <label><input type="checkbox" id="capitalize" checked> З великої літери</label>
+      <label><input type="checkbox" id="plainApos"> Простий апостроф (')</label>
+    </div>
+    <div class="result" aria-live="polite">
+      <output id="amount-out"></output>
+      <button type="button" class="copy" data-copy="amount-out">Копіювати</button>
+    </div>
+  </section>
+
+  <section id="chyslo" class="card">
+    <h2>Число прописом</h2>
+    <div class="row">
+      <label class="field grow">
+        <span>Ціле число</span>
+        <input id="number" inputmode="numeric" autocomplete="off" value="21">
+      </label>
+      <label class="field">
+        <span>Рід</span>
+        <select id="gender">
+          <option value="masculine">Чоловічий (один, два)</option>
+          <option value="feminine">Жіночий (одна, дві)</option>
+          <option value="neuter">Середній (одне, два)</option>
+        </select>
+      </label>
+    </div>
+    <div class="result" aria-live="polite">
+      <output id="number-out"></output>
+      <button type="button" class="copy" data-copy="number-out">Копіювати</button>
+    </div>
+  </section>
+
+  <div class="grid">
+    <section id="edrpou" class="card">
+      <h2>Перевірка ЄДРПОУ</h2>
+      <label class="field">
+        <span>Код ЄДРПОУ (8 цифр)</span>
+        <input id="edrpou-in" inputmode="numeric" maxlength="12" autocomplete="off" placeholder="14360570">
+      </label>
+      <p class="status" id="edrpou-out" aria-live="polite"></p>
+    </section>
+
+    <section id="ipn" class="card">
+      <h2>Перевірка ІПН (РНОКПП)</h2>
+      <label class="field">
+        <span>РНОКПП (10 цифр)</span>
+        <input id="ipn-in" inputmode="numeric" maxlength="14" autocomplete="off" placeholder="3287301233">
+      </label>
+      <p class="status" id="ipn-out" aria-live="polite"></p>
+    </section>
+  </div>
+  <p class="note">Перевірка показує лише, що номер правильно сформований за контрольною цифрою, а не те, що така особа чи компанія існує в реєстрі.</p>
+
+  <section id="dev" class="card dev">
+    <h2>Для розробників</h2>
+    <p>Усе, що є на цій сторінці, доступне як безкоштовна відкрита бібліотека <strong>UaKit</strong> (ліцензія MIT) для JavaScript/TypeScript і C#/.NET, без залежностей.</p>
+    <div class="grid">
+      <div>
+        <h3>JavaScript / TypeScript</h3>
+        <pre><code>npm install uakit</code></pre>
+        <pre><code>import { moneyToWords } from 'uakit';
+
+moneyToWords(1250.5);
+// Одна тисяча двісті п’ятдесят гривень 50 копійок</code></pre>
+        <a href="https://www.npmjs.com/package/uakit">uakit на npm</a>
+      </div>
+      <div>
+        <h3>C# / .NET</h3>
+        <pre><code>dotnet add package UaKit</code></pre>
+        <pre><code>using UaKit;
+
+MoneyToWords.ToWords(1250.50m);
+// Одна тисяча двісті п’ятдесят гривень 50 копійок</code></pre>
+        <a href="https://www.nuget.org/packages/UaKit">UaKit на NuGet</a>
+      </div>
+    </div>
+    <p><a href="https://github.com/maksim-krih/UaKit">Вихідний код на GitHub</a></p>
+  </section>
+
+  <section class="card faq">
+    <h2>Часті питання</h2>
+    <details open>
+      <summary>Як правильно писати суму прописом у документах?</summary>
+      <p>Гривні пишуть словами, а копійки зазвичай цифрами: «Одна тисяча двісті п’ятдесят гривень 50 копійок». Слово «гривня» узгоджується з числом: одна гривня, дві гривні, п’ять гривень. Числівники «один» і «два» перед гривнею, копійкою та тисячею стають жіночого роду: «одна», «дві». Якщо потрібно, копійки теж можна записати словами, для цього є перемикач «Копійки словами».</p>
+    </details>
+    <details>
+      <summary>Як округлюються копійки?</summary>
+      <p>Сума округлюється до двох знаків після коми, половина копійки округлюється вгору: 0,995 → одна гривня 00 копійок. Рахунок ведеться в десятковій арифметиці, тому немає похибок на кшталт 1,005 → 1,00.</p>
+    </details>
+    <details>
+      <summary>Як перевіряється код ЄДРПОУ?</summary>
+      <p>Код ЄДРПОУ має 8 цифр, остання з них контрольна. Її обчислюють як зважену суму перших семи цифр за модулем 11, причому ваги залежать від діапазону коду. Якщо контрольна цифра не збігається, у коді помилка: зайва, пропущена чи переставлена цифра.</p>
+    </details>
+    <details>
+      <summary>Що можна дізнатися з ІПН (РНОКПП)?</summary>
+      <p>Перші п’ять цифр РНОКПП — це кількість днів від 31 грудня 1899 року до дати народження, дев’ята цифра непарна в чоловіків і парна в жінок, десята контрольна. Тому з правильного номера можна визначити дату народження і стать.</p>
+    </details>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <p>UaKit, відкрита бібліотека під ліцензією MIT. <a href="https://github.com/maksim-krih/UaKit">GitHub</a> · <a href="https://www.npmjs.com/package/uakit">npm</a> · <a href="https://www.nuget.org/packages/UaKit">NuGet</a></p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

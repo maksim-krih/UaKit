@@ -1,7 +1,7 @@
 {
   "name": "uakit",
   "version": "0.1.0",
-  "description": "Ukrainian business data: EDRPOU and RNOKPP (ІПН) validation, RNOKPP decoding (birth date, sex), amounts in words in hryvnias (сума прописом). Zero dependencies.",
+  "description": "Сума прописом, число прописом, перевірка ЄДРПОУ та ІПН (РНОКПП) з датою народження і статтю. Ukrainian amount in words (UAH, USD, EUR), number to words, EDRPOU and RNOKPP validation. Zero dependencies.",
   "type": "module",
   "exports": {
     ".": {
@@ -22,16 +22,30 @@
     "prepack": "node -e \"for(const f of ['README.md','LICENSE'])require('fs').copyFileSync('../'+f,f)\""
   },
   "keywords": [
+    "сума прописом",
+    "прописом",
+    "число прописом",
+    "гривня",
+    "гривні прописом",
+    "ЄДРПОУ",
+    "ІПН",
+    "РНОКПП",
     "ukraine",
     "ukrainian",
+    "amount-in-words",
+    "number-to-words",
+    "num2words",
+    "spell-number",
+    "money-to-words",
+    "hryvnia",
+    "uah",
     "edrpou",
     "rnokpp",
     "inn",
     "ipn",
+    "tax-id",
     "validation",
-    "number-to-words",
-    "hryvnia",
-    "uah"
+    "invoice"
   ],
   "author": "Maksim Krykh",
   "license": "MIT",
@@ -40,7 +54,7 @@
     "url": "git+https://github.com/maksim-krih/UaKit.git",
     "directory": "js"
   },
-  "homepage": "https://github.com/maksim-krih/UaKit#readme",
+  "homepage": "https://maksim-krih.github.io/UaKit/",
   "bugs": {
     "url": "https://github.com/maksim-krih/UaKit/issues"
   },
