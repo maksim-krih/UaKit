@@ -14,6 +14,9 @@
     <PackageTags>ukraine;ukrainian;edrpou;rnokpp;inn;ipn;validation;number-to-words;hryvnia;uah</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/maksim-krih/UaKit</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/maksim-krih/UaKit</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>

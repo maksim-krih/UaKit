@@ -35,6 +35,15 @@
   ],
   "author": "Maksim Krykh",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maksim-krih/UaKit.git",
+    "directory": "js"
+  },
+  "homepage": "https://github.com/maksim-krih/UaKit#readme",
+  "bugs": {
+    "url": "https://github.com/maksim-krih/UaKit/issues"
+  },
   "engines": {
     "node": ">=18"
   },
