@@ -93,6 +93,16 @@ cd js && npm install && npm test
 
 Новий випадок спершу додавайте в `shared/test-vectors.json`: його перевірять обидві реалізації.
 
+### Реліз
+
+CI проганяє тести обох пакетів на кожен push і PR. Публікація запускається тегом, з якого береться версія для NuGet і npm:
+
+```bash
+git tag v0.2.0 && git push origin v0.2.0
+```
+
+Потрібні секрети репозиторію: `NUGET_API_KEY` (nuget.org → API Keys, scope Push, glob `UaKit`) і `NPM_TOKEN` (npmjs.com → Access Tokens, Granular, право Read and write).
+
 ## Ліцензія
 
 [MIT](LICENSE)
