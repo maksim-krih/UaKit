@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net8.0;net10.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <PackageId>UaKit</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>Maksim Krykh</Authors>
+    <Description>Ukrainian business data for .NET: EDRPOU and RNOKPP (ІПН) validation, RNOKPP decoding (birth date, sex), amounts in words in hryvnias (сума прописом).</Description>
+    <PackageTags>ukraine;ukrainian;edrpou;rnokpp;inn;ipn;validation;number-to-words;hryvnia;uah</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>

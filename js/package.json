@@ -1,0 +1,45 @@
+{
+  "name": "uakit",
+  "version": "0.1.0",
+  "description": "Ukrainian business data: EDRPOU and RNOKPP (ІПН) validation, RNOKPP decoding (birth date, sex), amounts in words in hryvnias (сума прописом). Zero dependencies.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test \"test/**/*.test.ts\"",
+    "prepublishOnly": "npm run build && npm test",
+    "prepack": "node -e \"for(const f of ['README.md','LICENSE'])require('fs').copyFileSync('../'+f,f)\""
+  },
+  "keywords": [
+    "ukraine",
+    "ukrainian",
+    "edrpou",
+    "rnokpp",
+    "inn",
+    "ipn",
+    "validation",
+    "number-to-words",
+    "hryvnia",
+    "uah"
+  ],
+  "author": "Maksim Krykh",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "typescript": "5.9.3"
+  }
+}
