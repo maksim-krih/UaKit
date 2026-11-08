@@ -2,9 +2,14 @@ name: Publish
 
 # Реліз: git tag v0.2.0 && git push origin v0.2.0
 # Версія для обох пакетів береться з тегу.
+# Обидва реєстри використовують Trusted Publishing (OIDC), секрети не потрібні.
 on:
   push:
     tags: ['v*.*.*']
+
+permissions:
+  contents: read
+  id-token: write
 
 jobs:
   nuget:
@@ -19,13 +24,14 @@ jobs:
           dotnet-version: 10.0.x
       - run: dotnet test -c Release
       - run: dotnet pack src/UaKit -c Release -o out -p:Version=${GITHUB_REF_NAME#v}
-      - run: dotnet nuget push "out/*.nupkg" --api-key "${{ secrets.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
+      - uses: NuGet/login@v1
+        id: nuget-login
+        with:
+          user: Shoux
+      - run: dotnet nuget push "out/*.nupkg" --api-key "${{ steps.nuget-login.outputs.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
 
   npm:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
     defaults:
       run:
         working-directory: js
@@ -37,8 +43,13 @@ jobs:
           registry-url: https://registry.npmjs.org
           cache: npm
           cache-dependency-path: js/package-lock.json
+      - run: npm install -g npm@latest
       - run: npm ci
       - run: npm version "${GITHUB_REF_NAME#v}" --no-git-tag-version --allow-same-version
-      - run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish (skip if this version is already on npm)
+        run: |
+          if npm view "uakit@${GITHUB_REF_NAME#v}" version >/dev/null 2>&1; then
+            echo "uakit@${GITHUB_REF_NAME#v} already published, skipping"
+          else
+            npm publish --provenance --access public
+          fi

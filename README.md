@@ -101,8 +101,4 @@ CI проганяє тести обох пакетів на кожен push і P
 git tag v0.2.0 && git push origin v0.2.0
 ```
 
-Потрібні секрети репозиторію: `NUGET_API_KEY` (nuget.org → API Keys, scope Push, glob `UaKit`) і `NPM_TOKEN` (npmjs.com → Access Tokens, Granular, право Read and write).
-
-## Ліцензія
-
-[MIT](LICENSE)
+Секрети не потрібні: NuGet і npm приймають публікацію з `publish.yml` через Trusted Publishing (OIDC).
